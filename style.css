@@ -1,0 +1,97 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #00B2FF;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.dino {
+    width: 16em;
+    height: 20em;
+    margin: 0 auto;
+    border: 2px solid red;
+}
+
+.dino__head {
+    height: 47%;
+    margin-left: 33.333%;
+    width: 66.666%;
+    position: relative;
+}
+
+.dino__head__back {
+    background-color: #00a652;
+    border: 0.25em solid #000;
+    border-width: 0.35em 0 0 0.25em;
+    border-top-left-radius: 100% 47%;
+    height: 100%;
+    width: 50%;
+}
+
+.dino__head__topfront {
+    background-color: #00a652;
+    border: 0.25em solid #000;
+    border-top-right-radius: 100%;
+    border-width: 0.35em 0.35em 0 0;
+    display: block;
+    height: 50%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+.dino__head__mouth {
+    background-color: #00a652;
+    border: 0.25em solid #000;
+    border-bottom-right-radius: 100%;
+    border-width: 0 0.35em 0.25em 0;
+    display: block;
+    height: 30%;
+    left: 70%;
+    position: absolute;
+    top: 50%;
+    width: 30%;
+}
+
+.dino__head__throat {
+    background-color: #00a652;
+    height: calc(30% + 0.7em);
+    left: 40%;
+    position: absolute;
+    top: 50%;
+    width: 30%;
+}
+
+.dino__head__throat:after {
+    background-color: #00B2FF;
+    border: 0.25em solid #000;
+    border-top-left-radius: 100%;
+    border-width: 0.25em 0 0 0.35em;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: calc(80% - 0.25em);
+    width: 100%;
+}
+
+.dino__head__eye {
+    background-color: #000;
+    border-radius: 50% 50% 46% 54% / 50% 45% 55% 50%;
+    display: block;
+    height: 1em;
+    left: 65%;
+    position: absolute;
+    top: 27%;
+    width: 1em;
+}
