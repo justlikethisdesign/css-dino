@@ -17,8 +17,8 @@ body {
     width: 16em;
     height: 20em;
     margin: 0 auto;
-    border: 2px solid red;
     position: relative;
+    animation: walk-bounce-animation 1.5s infinite;
 }
 
 .dino__head {
@@ -96,6 +96,7 @@ body {
     position: absolute;
     top: 27%;
     width: 1em;
+    animation: blink-animation 3s infinite;
 }
 
 .dino__body {
@@ -142,6 +143,23 @@ body {
     transform: rotate(-15deg);
 }
 
+.dino__arm {
+    background-color: #00a652;
+    border: 0.35em solid #000;
+    border-top-right-radius: 30% 50%;
+    border-bottom-right-radius: 50% 70%;
+    border-width: 0.25em 0.25em 0.25em 0;
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 30%;
+    left: 55%;
+    bottom: 80%;
+    width: 30%;
+    transform-origin: 0 50%;
+    animation: arm-sway-animation 15s infinite;
+}
+
 .dino__bottom {
     background-color: #00a652;
     border: 0.35em solid #000;
@@ -152,7 +170,7 @@ body {
     display: block;
     height: 22%;
     left: 3%;
-    bottom: 4.6%;
+    bottom: 4.3%;
     width: 54%;
     transform: rotate(-20deg) scaleX(-1);
 }
@@ -160,15 +178,156 @@ body {
 .dino__tail {
     background-color: #00a652;
     border: 0.35em solid #000;
-    border-top-right-radius: 100%;
-    border-top-left-radius: 100%;
-    border-width: 0.35em 0.25em 0 0.35em;
+    border-top-right-radius: 200%;
+    border-top-left-radius: 200%;
+    border-width: 0.35em 0.25em 0 0.25em;
     content: " ";
     position: absolute;
     display: block;
-    height: 15%;
+    height: 12.5%;
     left: 0;
-    bottom: 11%;
-    width: 17%;
-    transform: rotate(-60deg);
+    bottom: 12%;
+    width: 14%;
+    transform: rotate(-80deg);
+}
+
+.dino__back-leg {
+    background-color: #00a652;
+    border: 0.35em solid #000;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-width: 0 0.25em 0.25em 0.25em;
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 7%;
+    left: 48%;
+    bottom: 4%;
+    width: 12%;
+    transform: rotate(-10deg);
+    animation: back-leg-animation 3s infinite;
+    animation-delay: 1.5s;
+}
+
+.dino__front-leg {
+    background-color: #00a652;
+    border: 0.35em solid #000;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-width: 0 0.25em 0.25em 0.25em;
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 8%;
+    left: 41%;
+    bottom: 3%;
+    width: 14%;
+    transform: rotate(-12deg);
+    animation: front-leg-animation 3s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+        margin-top: 0;
+        height: 1em;
+  }
+
+  1% {
+        margin-top: 0.35em;
+        height: 0.3em;
+  }
+
+  2% {
+        margin-top: 0.45em;
+        height: 0.1em;
+  }
+
+  4% {
+      margin-top: 0.35em;
+      height: 0.3em;
+  }
+  6% {
+      margin-top: 0;
+      height: 1em;
+  }
+}
+
+@keyframes arm-sway-animation {
+  0% {
+        transform: rotate(0deg);
+  }
+
+  20% {
+        transform: rotate(35deg);
+  }
+
+  40% {
+        transform: rotate(40deg);
+  }
+
+  60% {
+      transform: rotate(25deg);
+  }
+  80% {
+      transform: rotate(30deg);
+  }
+}
+
+@keyframes front-leg-animation {
+  0% {
+      left: 41%;
+      bottom: 3%;
+      transform: rotate(-10deg);
+  }
+
+  15% {
+      left: 37%;
+      bottom: 1%;
+      transform: rotate(-5deg);
+  }
+
+  20% {
+      left: 35%;
+      bottom: 2%;
+      transform: rotate(-10deg);
+  }
+
+  40% {
+      left: 38%;
+      bottom: 3%;
+  }
+}
+
+@keyframes back-leg-animation {
+  0% {
+      left: 48%;
+      bottom: 4%;
+      transform: rotate(-10deg);
+  }
+
+  15% {
+      left: 40%;
+      bottom: 2%;
+      transform: rotate(-5deg);
+  }
+
+  20% {
+      left: 35%;
+      bottom: 2%;
+      transform: rotate(-10deg);
+  }
+
+  40% {
+      left: 38%;
+      bottom: 3%;
+  }
+}
+
+@keyframes walk-bounce-animation {
+    0%, 100% {
+      transform: translateY(0.25em);
+    }
+    50% {
+      transform: translateY(0);
+    }
 }
